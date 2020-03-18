@@ -29,7 +29,7 @@ public class FlightSearchResultsSteps extends FunctionalLibrary {
 		waitForElementClickable(searchRs.getLnk_FlightNum().get(0));
 		List<WebElement> actualFlightListElements = searchRs.getLnk_FlightNum();
 		List<String> actualFlightLists = new ArrayList<>();
-		for (int i = 1; i < actualFlightListElements.size(); i++) {
+		for (int i = 0; i < actualFlightListElements.size(); i++) {
 			actualFlightLists.add(actualFlightListElements.get(i).getText());
 		}System.out.println(actualFlightLists);
 
@@ -39,7 +39,7 @@ public class FlightSearchResultsSteps extends FunctionalLibrary {
 	public void the_user_verifies_the_search_results_details() {
 		FlightSearchResultsPage flightse = new FlightSearchResultsPage();
 		
-		 Assert.assertEquals("Atlanta, GA to Minneapolis/St Paul, MN",flightse.getFlightsearchresult().getText());
+		 Assert.assertEquals("ATL - MSP",flightse.getFlightsearchresult().getText());
 		 
 			
 

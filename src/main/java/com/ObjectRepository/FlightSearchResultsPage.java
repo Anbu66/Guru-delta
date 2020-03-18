@@ -21,10 +21,10 @@ public class FlightSearchResultsPage {
 	@FindBy(xpath = "//input[@id='input_destination_1']")
 	private WebElement txt_destinationText;
 
-	@FindBy(xpath = "(//span[@class='dl-modal-component-calling-element']//a[@class='tblHeadBigtext fliReslnkfltNum wrapWords'])[i]")
+	@FindBy(xpath = "//div[contains(text(),'Sun, Feb 23, 2020')]")
 	private List<WebElement> lnk_FlightNum;
 	
-	@FindBy(xpath = "//div[text()='Atlanta, GA to Minneapolis/St Paul, MN']")
+	@FindBy(xpath = "//span[contains(text(),'ATL - MSP')]")
 	private WebElement Flightsearchresult ;
 
 	public WebElement getFlightsearchresult() {

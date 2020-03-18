@@ -46,6 +46,12 @@ public class FunctionalLibrary {
 	public static WebDriver driver;
 	private static String homeWindow = null;
 
+	/**
+	 * 1. To Launch the browser
+	 *  @param browser
+	 * @return
+	 */
+
 	public static WebDriver driverInit(String BrowserName) {
 
 		System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\lib\\chromedriver.exe");
@@ -67,16 +73,9 @@ public class FunctionalLibrary {
 		return driver;
 	}
 
+	
 	/**
-	 * To Launch the browser
-	 * 
-	 * @param browser
-	 * @return
-	 */
-
-	/**
-	 * Method to handle the Authentication alert
-	 * 
+	 * 2.  Method to handle the Authentication alert
 	 * @param actions
 	 * @param username
 	 * @param password
@@ -93,6 +92,10 @@ public class FunctionalLibrary {
 		return driver;
 	}
 
+	/**
+	 * 3. To get current date
+	 */
+	
 	public static String getCurrentDate() {
 		DateTimeFormatter fmt = DateTimeFormat.forPattern("yyyy-MM-dd");
 		LocalDate now = LocalDate.now();
@@ -100,6 +103,11 @@ public class FunctionalLibrary {
 		return exec_Date;
 	}
 
+	/**
+	 * 4. To get current time
+	 */
+
+	
 	public static String getCurrentTime() {
 		LocalDateTime now = LocalDateTime.now();
 		int hour = now.getHourOfDay();
@@ -110,8 +118,9 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * Method to accept alert
+	 *5.  Method to accept alert
 	 */
+	
 	public static void accept_Alert() {
 		try {
 			Alert alert = driver.switchTo().alert();
@@ -123,8 +132,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * Method to Capture screen
-	 * 
+	 * 6. Method to Capture screen
 	 * @return
 	 **/
 
@@ -140,7 +148,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * Method to switch to the newly opened window
+	 *7.  Method to switch to the newly opened window
 	 */
 	public static void switchToWindow() {
 		homeWindow = driver.getWindowHandle();
@@ -150,7 +158,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * To navigate to the main window from child window
+	 * 8. To navigate to the main window from child window
 	 */
 	public static void switchToMainWindow() {
 		for (String window : driver.getWindowHandles()) {
@@ -163,15 +171,16 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * This method returns the no.of windows present
-	 * 
+	 *9. This method returns the no.of windows present
 	 * @return
 	 */
 	public static int getWindowCount() {
 		return driver.getWindowHandles().size();
 	}
 
-	/****************** frames *********************/
+	/**
+	 *  10. frames 
+	 */
 
 	public static void frames(WebElement frameElement) {
 		try {
@@ -182,6 +191,10 @@ public class FunctionalLibrary {
 		}
 	}
 
+	/**
+	 *  11. switch to default frame
+	 */
+
 	public static void switchToDefaultcontent() {
 		try {
 			driver.switchTo().defaultContent();
@@ -189,6 +202,12 @@ public class FunctionalLibrary {
 		}
 	}
 
+	
+	/**
+	 *  12. method using navigate to 
+	 */
+
+	
 	public static void navigateToUrl(String url) {
 		try {
 			driver.navigate().to(url);
@@ -199,6 +218,10 @@ public class FunctionalLibrary {
 		}
 	}
 
+	/**
+	 *  13. close browser 
+	 */
+
 	public static void closeBrowser() {
 		try {
 			driver.close();
@@ -207,6 +230,10 @@ public class FunctionalLibrary {
 			Reporter.addStepLogInfo("Browser is not closed");
 		}
 	}
+
+	/**
+	 *  14.  set text using send keys
+	 */
 
 	public static void setText(WebElement element, String value) {
 		try {
@@ -219,7 +246,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * Verifying the visibility of element only for assert conditions
+	 * 15. Verifying the visibility of element only for assert conditions ...element present
 	 */
 
 	public static boolean isElementPresent(WebElement element) {
@@ -237,7 +264,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * Verifying the visibility of element only for assert conditions
+	 * 16. Verifying the visibility of element only for assert conditions Element not present
 	 */
 
 	public static boolean isElementNotPresent(WebElement element) {
@@ -254,8 +281,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * Method to click the element
-	 * 
+	 * 17. Method to click the element
 	 * @param object
 	 */
 	public static void click(Object object) {
@@ -268,9 +294,10 @@ public class FunctionalLibrary {
 		}
 	}
 
-	/******************
-	 * getting the text from non editable field
-	 *********************/
+	/**
+	 * 18.  getting the text from non editable field
+	 *
+	 */
 
 	public static String getText(WebElement element) {
 		String text = null;
@@ -287,8 +314,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * Method to get the value from textbox
-	 * 
+	 * 19. Method to get the value from textbox
 	 * @param element
 	 * @return
 	 */
@@ -307,8 +333,9 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * Method to select the option from dropdown by value
+	 * 20. Method to select the option from dropdown by value
 	 */
+	
 	public static void selectByValue(WebElement element, String value) {
 		try {
 			Select obj_select = new Select(element);
@@ -320,7 +347,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * Method to select the option from drop down by visible text
+	 * 21. Method to select the option from drop down by visible text
 	 */
 	public static void selectByText(WebElement element, String Text) {
 		try {
@@ -333,7 +360,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * Method to select the option from dropdown by index
+	 *22.  Method to select the option from dropdown by index
 	 */
 	public static void selectByIndex(WebElement element, int index) {
 		try {
@@ -346,7 +373,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * To pause execution until get expected elements visibility
+	 * 23. To pause execution until get expected elements visibility
 	 * 
 	 * @param element
 	 */
@@ -355,20 +382,26 @@ public class FunctionalLibrary {
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 
+	/**
+	 * 
+	 * 
+	 * 24. wait for element  explicit wait
+	 */
+	
 	public static void waitForElementClickable(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 
 	/**
-	 * To pause the execution @throws
+	 * 25. To pause the execution using Thrad.sleep
 	 */
 	public static void pause(int milliSeconds) throws InterruptedException {
 		Thread.sleep(milliSeconds);
 	}
 
 	/**
-	 * To create a connectivity to Database and update the scenario execution
+	 *26.  To create a connectivity to Database and update the scenario execution using sql
 	 * status
 	 */
 	public static void createDBConnection(String scName, String scStatus) {
@@ -399,7 +432,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * Method to get the available option from dropdown
+	 * 27. Method to get the available option from dropdown using forloop
 	 * 
 	 * @return
 	 */
@@ -421,7 +454,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * Method to perform mouseover action on required element
+	 * 28. Method to perform mouseover action on required element using javascript
 	 * 
 	 * @param element
 	 */
@@ -437,6 +470,13 @@ public class FunctionalLibrary {
 		}
 	}
 
+	/**
+	 * 29. mouse over using actions class
+	 * 
+	 * @param element
+	 */
+	
+	
 	public static void mouseOver(WebElement element) {
 		try {
 			Actions action = new Actions(driver);
@@ -448,8 +488,9 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * Method to wait for page load using javascript
+	 * 30.  Method to wait for page load using javascript
 	 */
+	
 	public static void jsWaitForPageLoad() {
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		String pageReadyState = (String) ((JavascriptExecutor) driver).executeScript("return document.readyState");
@@ -459,6 +500,11 @@ public class FunctionalLibrary {
 
 	}
 
+	/**
+	 * 31. getting random string
+	 * @param length
+	 * @return
+	 */
 	public static String getRandomString(int length) {
 		char[] chars = "abcdefghijklmnopqrstuvwxyz".toCharArray();
 		StringBuilder sb = new StringBuilder();
@@ -470,6 +516,14 @@ public class FunctionalLibrary {
 		return sb.toString();
 	}
 
+	/**
+	 * 32. getting random number
+	 * @param length
+	 * @return
+	 */
+	
+	
+	
 	public static String getRandomNumber(int length) {
 		char[] chars = "1234567890".toCharArray();
 		StringBuilder sb = new StringBuilder();
@@ -481,12 +535,24 @@ public class FunctionalLibrary {
 		return sb.toString();
 	}
 
+	/**
+	 * 33. select class getting first selected options
+	 * @param element
+	 * @return
+	 */
+
 	public String dropDownSelectedValue(WebElement element) {
 		Select select = new Select(element);
 		String selectedOption = select.getFirstSelectedOption().getText();
 		return selectedOption;
 	}
-
+	
+	/**
+	 * 34. big decimal to round off data for financial calcultions
+	 * @param x
+	 * @param numberofDecimals
+	 * @return
+	 */
 	public static BigDecimal truncateDecimal(double x, int numberofDecimals) {
 		if (x > 0) {
 			return new BigDecimal(String.valueOf(x)).setScale(numberofDecimals, BigDecimal.ROUND_FLOOR);
@@ -496,7 +562,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * To get default selected value from drop down
+	 * 35. To get default selected value from drop down
 	 * 
 	 * @param element
 	 * @return String
@@ -510,12 +576,10 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * To get checkbox is selected or not from list of checkboxes
-	 * 
-	 * @param List
-	 *            <WebElement>
-	 * @return
+	 * 36. To get checkbox is selected or not from list of checkboxes
+	 *  @return
 	 */
+	
 	public static boolean isCheckBoxSelectedInDropdown(List<WebElement> elements) {
 		boolean flag = true;
 		int noOfCheckBox = elements.size();
@@ -527,6 +591,12 @@ public class FunctionalLibrary {
 		return flag;
 	}
 
+	/**
+	 * 37. Click method using Javascript executor
+	 * @param element
+	 */
+	
+	
 	public static void clickjs(WebElement element) {
 		try {
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
@@ -538,8 +608,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * Method to scroll page up for element visibility using java script
-	 * 
+	 *38.  Method to scroll page up for element visibility using java script
 	 * @author Ganesh Bharathy
 	 * @param element
 	 */
@@ -557,8 +626,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * Method to get size of list
-	 * 
+	 * 39. Method to get size of list
 	 * @author Ganesh Bharathy
 	 * @param List
 	 * @return size of list
@@ -575,8 +643,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * quit Browser
-	 * 
+	 *40.  quit Browser
 	 * @author Ganesh Bharathy
 	 * 
 	 */
@@ -590,8 +657,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * verify if list in Ascending Order
-	 * 
+	 * 41. verify if list in Ascending Order
 	 * @param list
 	 * @author Ganesh Bharathy
 	 * @return boolean
@@ -612,8 +678,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * verify if list in descending Order
-	 * 
+	 * 42. verify if list in descending Order
 	 * @param list
 	 * @author Ganesh Bharathy
 	 * @return boolean
@@ -635,10 +700,8 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * verify Option is available In DropDown
-	 * 
-	 * @param Dropdown
-	 *            and option
+	 *43.  verify Option is available In DropDown
+	 * @param Dropdown  and option
 	 * @author Ganesh Bharathy
 	 * @return boolean
 	 */
@@ -656,8 +719,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * select Multiple Values From ListBox
-	 * 
+	 *44.  select Multiple Values From ListBox 
 	 * @param list
 	 * @author Ganesh Bharathy
 	 * @return List of selected values
@@ -676,8 +738,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * verify if list of integer in Descending Order
-	 * 
+	 *45.  verify if list of integer in Descending Order
 	 * @param list
 	 * @author Ganesh Bharathy
 	 * @return boolean
@@ -698,8 +759,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * verify if list of integer in Ascending Order
-	 * 
+	 * 46. verify if list of integer in Ascending Order
 	 * @param list
 	 * @author Ganesh Bharathy
 	 * @return boolean
@@ -720,8 +780,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * get random special characters
-	 * 
+	 *47.  get random special characters
 	 * @param list
 	 * @author Ganesh Bharathy
 	 * @return boolean
@@ -738,8 +797,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * Method to clear the text box
-	 * 
+	 *48.  Method to clear the text box 
 	 * @param WebElement
 	 * @author Ganesh Bharathy
 	 */
@@ -749,12 +807,20 @@ public class FunctionalLibrary {
 		element.sendKeys(Keys.CONTROL, "a", Keys.DELETE);
 	}
 
+	/**
+	 * 49. invisiblity of element located expilicit wait
+	 * @param ByElement
+	 */
+	
 	public static void waitForElementTodisappear(By ByElement) {
 		WebDriverWait wait = new WebDriverWait(driver, 90);
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(ByElement));
 
 	}
-
+/**
+ * 50. getting current date another format
+ * @return
+ */
 	public static String getCurrentDateMMMDDYYYY() {
 		DateTimeFormatter fmt = DateTimeFormat.forPattern("MMM. dd, YYYY");
 		LocalDate now = LocalDate.now();
@@ -763,8 +829,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * Modify drop down value if something is already selected
-	 * 
+	 *51.  Modify drop down value if something is already selected
 	 * @param Dropdown
 	 * @author Ganesh Bharathy
 	 * @return
@@ -786,7 +851,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * enter integer number using keypress
+	 * 52. enter integer number using keypress robot class
 	 * 
 	 * @param String
 	 *            number
@@ -825,7 +890,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * click on specific co-ordinates for a Webelement
+	 * 53. click on specific co-ordinates for a Webelement using actions
 	 * 
 	 * @param String
 	 *            number
@@ -840,7 +905,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * Method to scroll page down for element visibility using java script
+	 *54.  Method to scroll page down for element visibility using java script
 	 * 
 	 * @author Ganesh Bharathy
 	 * @param element
@@ -859,7 +924,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * verify specific string is available in a list of String
+	 * 55. verify specific string is available in a list of String
 	 * 
 	 * @author Ganesh Bharathy
 	 * @param List
@@ -877,7 +942,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * Method to verify a field is disabled
+	 *56  Method to verify a field is disabled
 	 * 
 	 * @param WebElement
 	 * @author Ganesh Bharathy user your xpath in this way

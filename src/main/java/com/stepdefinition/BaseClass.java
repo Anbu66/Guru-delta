@@ -11,10 +11,10 @@ public class BaseClass {
 
 		FunctionalLibrary.driverInit("chrome");
 	}
-//
-//	@After
-//	public static void afterScenario() {
-//		FunctionalLibrary.closeBrowser();
-//	}
+
+	@After
+	public static void afterScenario() {
+		FunctionalLibrary.closeBrowser();
+	}
 
 }

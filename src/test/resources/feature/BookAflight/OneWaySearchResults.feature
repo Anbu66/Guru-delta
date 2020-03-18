@@ -7,7 +7,7 @@ Feature: To verify flight details in search results
     Given The User is in Delta homepage
     And The user selects book menu option
     When The user fill in the details
-      | ATL | MSP | One Way | 01/30/2019 | 1 Passenger|
+      | ATL | MSP | One Way | 02/23/2020 | 1 Passenger|
     And The user clicks the submit button
     Then The user verifies the search results details
       
