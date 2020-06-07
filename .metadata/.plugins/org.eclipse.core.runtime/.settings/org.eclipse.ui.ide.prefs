@@ -1,13 +1,8 @@
-<<<<<<< HEAD
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=upstream/develop
 PROBLEMS_FILTERS_MIGRATE=true
 eclipse.preferences.version=1
-platformState=1492429081835
+platformState=1591023353683
 quickStart=false
 tipsAndTricks=true
-=======
-PROBLEMS_FILTERS_MIGRATE=true
-eclipse.preferences.version=1
-platformState=1492429081835
-quickStart=false
-tipsAndTricks=true
->>>>>>> upstream/develop

@@ -7,59 +7,61 @@ import org.openqa.selenium.support.PageFactory;
 import com.resources.FunctionalLibrary;
 
 public class ShopAHotel {
-public ShopAHotel() {
-	PageFactory.initElements(FunctionalLibrary.driver, this);
-}
-@FindBy(xpath = "//a[@id=\"primary-static-link-1\"]" )
-private WebElement shop_Hotel;
+	public ShopAHotel() {
+		PageFactory.initElements(FunctionalLibrary.driver, this);
+	}
 
-@FindBy(xpath ="//input[@id=\"hotelLocation\"]")
-private WebElement hotelLocation;
-@FindBy(xpath ="//input[@id=\"hotelCheckInDate\"]")
-private WebElement hotelCheckInDate;
-@FindBy(xpath = "//input[@id=\"hotelCheckOutDate\"]")
-private WebElement hotelCheckOutDate;
+	@FindBy(xpath = "//a[@id=\"primary-static-link-1\"]")
+	private WebElement shop_Hotel;
 
-public WebElement getHotelCheckOutDate() {
-	return hotelCheckOutDate;
-}
-@FindBy(xpath ="//span[@id=\"hotelNumberOfRooms-button\"]")
-private WebElement noOfRooms;
+	@FindBy(xpath = "//input[@id=\"hotelLocation\"]")
+	private WebElement hotelLocation;
+	@FindBy(xpath = "//input[@id=\"hotelCheckInDate\"]")
+	private WebElement hotelCheckInDate;
+	@FindBy(xpath = "//input[@id=\"hotelCheckOutDate\"]")
+	private WebElement hotelCheckOutDate;
 
-@FindBy(id = "btnSubmit")
-private WebElement btn_bookAHotel;
-@FindBy(id ="btnRoomSubmit")
-private WebElement btn_RoomSubmit;
-@FindBy(id = "hotelNumberOfAdults-button")
-private WebElement drpdown_Adults;
+	public WebElement getHotelCheckOutDate() {
+		return hotelCheckOutDate;
+	}
 
-public WebElement getDrpdown_Adults() {
-	return drpdown_Adults;
-}
+	@FindBy(xpath = "//span[@id=\"hotelNumberOfRooms-button\"]")
+	private WebElement noOfRooms;
 
-public WebElement getBtn_RoomSubmit() {
-	return btn_RoomSubmit;
-}
+	@FindBy(id = "btnSubmit")
+	private WebElement btn_bookAHotel;
+	@FindBy(id = "btnRoomSubmit")
+	private WebElement btn_RoomSubmit;
+	@FindBy(id = "hotelNumberOfAdults-button")
+	private WebElement drpdown_Adults;
 
-public WebElement getBtn_bookAHotel() {
-	return btn_bookAHotel;
-}
+	public WebElement getDrpdown_Adults() {
+		return drpdown_Adults;
+	}
 
-public WebElement getShop_Hotel() {
-	return shop_Hotel;
-}
+	public WebElement getBtn_RoomSubmit() {
+		return btn_RoomSubmit;
+	}
 
-public WebElement getHotelLocation() {
-	return hotelLocation;
+	public WebElement getBtn_bookAHotel() {
+		return btn_bookAHotel;
+	}
 
-}
+	public WebElement getShop_Hotel() {
+		return shop_Hotel;
+	}
 
-public WebElement getHotelCheckInDate() {
-	return hotelCheckInDate;
-}
+	public WebElement getHotelLocation() {
+		return hotelLocation;
 
-public WebElement getNoOfRooms() {
-	return noOfRooms;
-}
+	}
+
+	public WebElement getHotelCheckInDate() {
+		return hotelCheckInDate;
+	}
+
+	public WebElement getNoOfRooms() {
+		return noOfRooms;
+	}
 
 }
